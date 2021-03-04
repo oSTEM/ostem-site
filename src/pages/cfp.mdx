@@ -1,0 +1,19 @@
+import { Button } from "../components/button";
+import { VSpace } from "../components/spacing";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons/faPaperPlane";
+
+export const config = {
+  pageTitle: "Call for proposals",
+};
+
+The call for proposals will open _soon_.
+
+Successful applications will:
+
+- be really cool and awesome
+- focus on either STEM, LGBTQ+ issues, or both
+
+<VSpace size={"2rem"} />
+<Button icon={faPaperPlane} disabled onClick={"https://link.to/cfp-form"}>
+  Submit a proposal
+</Button>
