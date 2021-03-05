@@ -81,7 +81,7 @@ const NavMenu = ({ open }: { open: boolean }) => {
     >
       <ul>
         <NavItem href={"/"}>Conference Home</NavItem>
-        <NavItem href={"/cfp"}>Call for Proposals</NavItem>
+        <NavItem href={"/rfp"}>Call for Proposals</NavItem>
         <NavItem href={"https://ostem.org/"}>About oSTEM</NavItem>
       </ul>
       <style jsx>{`
