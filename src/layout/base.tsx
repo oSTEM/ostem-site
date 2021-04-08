@@ -17,25 +17,45 @@ export const BaseLayout = ({
   appendSiteTitle = true,
 }: BaseLayoutProps) => {
   return (
-    <div className={"root"}>
-      <Head>
-        <title>
-          {pageTitle && appendSiteTitle
-            ? `${pageTitle} | ${site.title}`
-            : pageTitle || site.title}
-        </title>
-      </Head>
-      <div className={"nav"}>
-        <Nav />
+    <div className="outer">
+      <div className={"root"}>
+        <Head>
+          <title>
+            {pageTitle && appendSiteTitle
+              ? `${pageTitle} | ${site.title}`
+              : pageTitle || site.title}
+          </title>
+        </Head>
+        <div className={"nav"}>
+          <Nav />
+        </div>
+        <div>{children}</div>
       </div>
-      {children}
+      <div className="spacer" />
+      <footer>
+        <VercelBanner />
+      </footer>
       <style jsx>{`
-        .root {
+        .outer {
           min-height: 100vh;
+          height: 100%;
+          display: flex;
+          flex-flow: column;
+        }
+        .spacer {
+          flex: 1;
+        }
+        .root {
           padding: 1rem;
           display: flex;
           flex-flow: column nowrap;
           overflow: auto;
+        }
+
+        footer {
+          display: flex;
+          padding: 2rem;
+          background-color: #f8f8f8;
         }
 
         @media only screen and (min-width: ${Breakpoint.MinMobile}) {
@@ -46,5 +66,31 @@ export const BaseLayout = ({
         }
       `}</style>
     </div>
+  );
+};
+
+const VercelBanner = () => {
+  return (
+    <a
+      className="vercel-banner"
+      href="https://vercel.com/?utm_source=ostem&utm_campaign=oss"
+    >
+      Powered by{" "}
+      <img src="/images/powered-by-vercel.svg" alt="Powered by Vercel" />
+      <style jsx>{`
+        .vercel-banner {
+          color: inherit;
+          display: block;
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+        }
+        img {
+          display: inline-block;
+          max-height: 1.25rem;
+          margin-left: 0.25rem;
+        }
+      `}</style>
+    </a>
   );
 };
