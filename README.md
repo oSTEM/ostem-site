@@ -1,5 +1,10 @@
 # oSTEM Conference Site
 
+<a href="https://vercel.com/?utm_source=ostem&utm_campaign=oss" style="display: flex; align-items: center;">
+Powered by&nbsp;
+<img height="16px" src="public/images/powered-by-vercel.svg" alt="Vercel" />
+</a>
+
 ## Non-code (copy) edits
 For most non-code changes, edits can be made in the GitHub interface.
 
