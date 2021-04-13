@@ -27,6 +27,8 @@ You can also use the `Git: Clone` command within VSCode.
 
 ### Install project dependencies
 
+This will install all of the JavaScript dependencies (such as React and TypeScript) for this project.
+
 ```bash
 npm install
 ```
