@@ -54,6 +54,7 @@ const NavMenu = ({ open }: { open: boolean }) => {
         <NavItem href={"/"}>Conference Home</NavItem>
         <NavItem href={"/cfp"}>Call for Proposals</NavItem>
         <NavItem href={"https://ostem.org/"}>About oSTEM</NavItem>
+        <NavItem href={"/resources"}>Community Resources</NavItem>
       </ul>
       <style
         // we use custom css here since tailwind doesn't mix very well with data-* attributes
