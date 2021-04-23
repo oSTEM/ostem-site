@@ -1,4 +1,10 @@
+/**
+ * Breakpoints to use for media queries.
+ *
+ * These line up with TailwindCSS's breakpoints and should only be used
+ * with min-width queries.
+ */
 export enum Breakpoint {
-  // Mobile breakpoint (use with min-width queries)
-  MinMobile = "600px",
+  Sm = "640px",
+  Md = "768px",
 }

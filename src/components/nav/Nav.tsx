@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Link from "next/link";
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,33 +17,15 @@ export const Nav = () => {
 
   return (
     <nav>
-      <div className="nav-header">
+      <div className="mb-8 flex items-center">
         <NavToggle toggleOpen={toggleOpen} />
-        <img alt="oSTEM logo" src="/images/logo-banner.png" className="logo" />
+        <img
+          alt="oSTEM logo"
+          src="/images/logo-banner.png"
+          className="block max-h-16 ml-auto md:mr-auto"
+        />
       </div>
       <NavMenu open={open} />
-      <style jsx>{`
-        .nav-header {
-          display: flex;
-          align-items: center;
-          margin-bottom: 2rem;
-        }
-
-        .logo {
-          display: block;
-          max-height: 5rem;
-          max-width: 15rem;
-          height: auto;
-          width: auto;
-          margin-left: auto;
-        }
-
-        @media (min-width: ${Breakpoint.MinMobile}) {
-          .logo {
-            margin-right: auto;
-          }
-        }
-      `}</style>
     </nav>
   );
 };
@@ -53,22 +36,10 @@ const NavToggle = ({
   toggleOpen: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }) => {
   return (
-    <div className={"root"}>
+    <div className="text-2xl p-4 md:hidden">
       <UnstyledButton onClick={toggleOpen} aria-label={"toggle navigation"}>
         <FontAwesomeIcon className={`icon`} icon={faBars} role={"button"} />
       </UnstyledButton>
-      <style jsx>{`
-        .root {
-          font-size: 2rem;
-          padding: 1rem;
-        }
-
-        @media only screen and (min-width: ${Breakpoint.MinMobile}) {
-          .root {
-            display: none;
-          }
-        }
-      `}</style>
     </div>
   );
 };
@@ -84,7 +55,10 @@ const NavMenu = ({ open }: { open: boolean }) => {
         <NavItem href={"/cfp"}>Call for Proposals</NavItem>
         <NavItem href={"https://ostem.org/"}>About oSTEM</NavItem>
       </ul>
-      <style jsx>{`
+      <style
+        // we use custom css here since tailwind doesn't mix very well with data-* attributes
+        jsx
+      >{`
         .nav-list {
           display: none;
         }
@@ -101,7 +75,7 @@ const NavMenu = ({ open }: { open: boolean }) => {
           width: 100%;
         }
 
-        @media only screen and (min-width: ${Breakpoint.MinMobile}) {
+        @media only screen and (min-width: ${Breakpoint.Sm}) {
           .nav-list {
             padding: 1rem;
             width: 12rem;
