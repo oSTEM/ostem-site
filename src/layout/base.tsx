@@ -1,4 +1,3 @@
-import { Breakpoint } from "@/theme";
 import Head from "next/head";
 import React from "react";
 
@@ -17,8 +16,8 @@ export const BaseLayout = ({
   appendSiteTitle = true,
 }: BaseLayoutProps) => {
   return (
-    <div className="outer">
-      <div className={"root"}>
+    <div className="min-h-screen flex flex-col">
+      <div className="p-4 flex flex-col md:flex-row md:px-8 md:py-16">
         <Head>
           <title>
             {pageTitle && appendSiteTitle
@@ -26,45 +25,15 @@ export const BaseLayout = ({
               : pageTitle || site.title}
           </title>
         </Head>
-        <div className={"nav"}>
+        <div>
           <Nav />
         </div>
-        <div>{children}</div>
+        <div className="w-full">{children}</div>
       </div>
-      <div className="spacer" />
-      <footer>
+      <div className="flex-1" />
+      <footer className="flex p-8 bg-gray-50">
         <VercelBanner />
       </footer>
-      <style jsx>{`
-        .outer {
-          min-height: 100vh;
-          height: 100%;
-          display: flex;
-          flex-flow: column;
-        }
-        .spacer {
-          flex: 1;
-        }
-        .root {
-          padding: 1rem;
-          display: flex;
-          flex-flow: column nowrap;
-          overflow: auto;
-        }
-
-        footer {
-          display: flex;
-          padding: 2rem;
-          background-color: #f8f8f8;
-        }
-
-        @media only screen and (min-width: ${Breakpoint.MinMobile}) {
-          .root {
-            flex-flow: row nowrap;
-            padding: 4rem 2rem;
-          }
-        }
-      `}</style>
     </div>
   );
 };
@@ -72,25 +41,15 @@ export const BaseLayout = ({
 const VercelBanner = () => {
   return (
     <a
-      className="vercel-banner"
+      className="text-current block ml-auto flex items-center"
       href="https://vercel.com/?utm_source=ostem&utm_campaign=oss"
     >
-      Powered by{" "}
-      <img src="/images/powered-by-vercel.svg" alt="Powered by Vercel" />
-      <style jsx>{`
-        .vercel-banner {
-          color: inherit;
-          display: block;
-          margin-left: auto;
-          display: flex;
-          align-items: center;
-        }
-        img {
-          display: inline-block;
-          max-height: 1.25rem;
-          margin-left: 0.25rem;
-        }
-      `}</style>
+      Powered by
+      <img
+        src="/images/powered-by-vercel.svg"
+        alt="Vercel"
+        className="max-h-4 ml-1"
+      />
     </a>
   );
 };

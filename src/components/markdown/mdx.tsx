@@ -1,8 +1,5 @@
 import { PageLayout } from "@/layout/page";
-import {
-  MDXProviderComponents,
-  MDXProviderComponentsProp,
-} from "@mdx-js/react";
+import { MDXProviderComponents } from "@mdx-js/react";
 import React from "react";
 
 export interface MDXPageConfig {
@@ -14,6 +11,11 @@ export const mdxComponents = (
 ): MDXProviderComponents => ({
   ...components,
 
+  /**
+   * Wrap MDX pages with a default layout.
+   *
+   * Without this, the MDX pages wouldn't include the navbar, etc.
+   */
   wrapper: function MyMDXLayout({
     children,
     config = {},
@@ -23,7 +25,7 @@ export const mdxComponents = (
   }) {
     return (
       <PageLayout pageTitle={config.pageTitle || ""}>
-        <div className="markdown">{children}</div>
+        <div className="markdown w-full">{children}</div>
       </PageLayout>
     );
   },
