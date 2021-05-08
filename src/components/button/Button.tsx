@@ -83,7 +83,7 @@ const buttonStyle = css.resolve`
   }
 
   :disabled,
-  &[data-disabled="true"] {
+  [data-disabled="true"] {
     background-color: var(--bg-disabled);
     cursor: not-allowed;
   }
