@@ -61,4 +61,22 @@ export const mdxComponents = (
       </ul>
     );
   },
+
+  ol: function MDXOrderedList({ children }) {
+    return (
+      <ol>
+        {children}
+        <style jsx>{`
+          ol {
+            list-style: decimal outside;
+            padding-left: 2rem;
+          }
+
+          ol :global(li) {
+            padding: 0.25em 0;
+          }
+        `}</style>
+      </ol>
+    );
+  },
 });
