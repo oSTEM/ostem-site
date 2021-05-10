@@ -5,6 +5,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 :root {
   --type-t50: 0.87rem;
@@ -34,8 +35,7 @@ body {
   color: var(--color-text);
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -56,6 +56,7 @@ h4,
 p {
   padding: 0.25em 0;
   line-height: 1.5em;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 h1 {
