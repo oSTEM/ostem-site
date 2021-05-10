@@ -2,10 +2,6 @@ import { PageLayout } from "@/layout/page";
 import { MDXProviderComponents } from "@mdx-js/react";
 import React from "react";
 
-export interface MDXPageConfig {
-  pageTitle?: string;
-}
-
 export const mdxComponents = (
   components: MDXProviderComponents,
 ): MDXProviderComponents => ({
@@ -16,15 +12,9 @@ export const mdxComponents = (
    *
    * Without this, the MDX pages wouldn't include the navbar, etc.
    */
-  wrapper: function MyMDXLayout({
-    children,
-    config = {},
-  }: {
-    children: any;
-    config?: MDXPageConfig;
-  }) {
+  wrapper: function MyMDXLayout({ children }: { children: any }) {
     return (
-      <PageLayout pageTitle={config.pageTitle || ""}>
+      <PageLayout>
         <div className="markdown w-full">{children}</div>
       </PageLayout>
     );

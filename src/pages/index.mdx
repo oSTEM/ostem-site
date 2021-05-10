@@ -1,15 +1,52 @@
-import { ConferenceCountdown } from "../components/ConferenceCountdown";
+import Image from "next/image";
+import Head from "next/head";
+import { BaseLayout } from "@/components/layout";
 
-export const config = {
-  pageTitle: "oSTEM Annual Conference",
-};
+<Head>
+  <title>Out in STEM</title>
+</Head>
 
-# oSTEM 2021 Annual Conference
+<NavBar />
 
-Hello, world! I like turtles.
+<div className="flex">
+  <div className="w-full h-96 relative">
+    <Image
+      src="/images/conference/2019-umich-group.jpg"
+      layout="fill"
+      objectFit="cover"
+      alt=""
+    />
+    <div className="w-full absolute bottom-8 p-2 flex items-center content-center bg-black bg-opacity-[0.75]">
+      <p className="text-white text-center w-[75%] mx-auto">
+        oSTEM has student and professional chapters across the US, UK, and
+        Canada. Looking to join an existing chapter or start a new one? Check
+        out our chapter directory or contact membership@ostem.org.
+      </p>
+    </div>
+  </div>
+</div>
 
-Welcome to the oSTEM 2021 conference, where babies are born, angels fly, and
-everything tastes like chocolate covered happiness and rainbows. We hope you're excited to be
-here!
+<main>
 
-<ConferenceCountdown />
+# About oSTEM
+
+Out in Science, Technology, Engineering, and Mathematics (oSTEM), Inc. is a
+501(c)(3) non-profit professional association for LGBTQ+ people in the STEM
+community. With over 100 student chapters at colleges/universities and
+professional chapters in cities across the United States and abroad, oSTEM is
+the largest chapter-based organization focused on LGBTQ+ people in STEM.
+
+<style jsx>{`
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+`}</style>
+
+</main>
+
+<Footer />
+
+export default function TestDesignPage({ children }) {
+  return <BaseLayout>{children}</BaseLayout>;
+}
