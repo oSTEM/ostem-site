@@ -30,9 +30,9 @@ export const mdxComponents = (
     );
   },
 
-  p: function MDXParagraph({ children }) {
+  p: function MDXParagraph({ children, ...props }) {
     return (
-      <p>
+      <p {...props}>
         {children}
         <style jsx>{`
           p {

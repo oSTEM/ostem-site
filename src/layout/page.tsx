@@ -1,5 +1,5 @@
 import React from "react";
-import { BaseLayout, BaseLayoutProps } from "./base";
+import { BaseLayout, BaseLayoutProps } from "../components/layout";
 
 export interface PageLayoutProps extends BaseLayoutProps {}
 
