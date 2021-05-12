@@ -3,7 +3,6 @@ import * as React from "react";
 export const PictureAndBio = (props: {
     imageSrc: string;
     name: string;
-    pronouns?: string;
     children: React.ReactNode;
 }) => {
     return <div className="grid grid-cols-12 gap-4 items-center py-8">
