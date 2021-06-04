@@ -19,11 +19,11 @@ export const Nav = () => {
     <nav>
       <div className="mb-8 flex items-center">
         <NavToggle toggleOpen={toggleOpen} />
-        <img
+{/*         <img
           alt="oSTEM logo"
           src="/images/logo-banner.png"
           className="block max-h-16 ml-auto md:mr-auto"
-        />
+        /> */}
       </div>
       <NavMenu open={open} />
     </nav>
@@ -51,11 +51,13 @@ const NavMenu = ({ open }: { open: boolean }) => {
       data-nav-open={open}
     >
       <ul>
-        <NavItem href={"/"}>Conference Home</NavItem>
-        <NavItem href={"/cfp"}>Call for Proposals</NavItem>
-        <NavItem href={"https://ostem.org/"}>About oSTEM</NavItem>
+        <NavItem href={"/blm-resources"}>Black Lives Matter Resources</NavItem>
+        <NavItem href={"/crisis-resources"}>Crisis Resources</NavItem>
         <NavItem href={"/covid-resources"}>COVID-19 Resources</NavItem>
         <NavItem href={"/member-resources"}>Member Resources</NavItem>
+        <NavItem href={"/affinity-groups"}>Affinity Groups</NavItem>
+        <NavItem href={"/grad-app-assistance"}>Grad App Assistance</NavItem>
+
 
       </ul>
       <style
